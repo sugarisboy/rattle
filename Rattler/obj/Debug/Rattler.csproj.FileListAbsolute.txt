@@ -1,0 +1,14 @@
+C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\Rattler.exe.config
+C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\Rattler.exe
+C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\Rattler.pdb
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.csprojAssemblyReference.cache
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\MainWindow.g.cs
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\App.g.cs
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler_MarkupCompile.cache
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler_MarkupCompile.lref
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\MainWindow.baml
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.g.resources
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.Properties.Resources.resources
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.csproj.GenerateResource.cache
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.exe
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.pdb

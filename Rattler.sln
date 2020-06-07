@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rattler", "Rattler\Rattler.csproj", "{9111B04D-6476-46CB-9CB1-32AC87C915BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RattlerCore", "RattlerCore\RattlerCore.csproj", "{40557BF7-4E55-4BBD-B684-CD2E30F214CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RattlerTest", "RattlerTest\RattlerTest.csproj", "{A03B5DD1-90B4-49FD-90DB-EDD618DAE7D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9111B04D-6476-46CB-9CB1-32AC87C915BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9111B04D-6476-46CB-9CB1-32AC87C915BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9111B04D-6476-46CB-9CB1-32AC87C915BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9111B04D-6476-46CB-9CB1-32AC87C915BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40557BF7-4E55-4BBD-B684-CD2E30F214CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40557BF7-4E55-4BBD-B684-CD2E30F214CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40557BF7-4E55-4BBD-B684-CD2E30F214CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40557BF7-4E55-4BBD-B684-CD2E30F214CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A03B5DD1-90B4-49FD-90DB-EDD618DAE7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A03B5DD1-90B4-49FD-90DB-EDD618DAE7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A03B5DD1-90B4-49FD-90DB-EDD618DAE7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A03B5DD1-90B4-49FD-90DB-EDD618DAE7D1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
