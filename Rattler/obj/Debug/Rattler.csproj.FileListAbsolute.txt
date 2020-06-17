@@ -12,3 +12,6 @@ C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.Properties.Resour
 C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.csproj.GenerateResource.cache
 C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.exe
 C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.pdb
+C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\RattlerCore.pdb
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.csproj.CopyComplete
+C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\RattlerCore.dll

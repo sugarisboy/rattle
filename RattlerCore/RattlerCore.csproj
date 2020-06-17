@@ -4,8 +4,8 @@
     <PropertyGroup>
         <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{40557BF7-4E55-4BBD-B684-CD2E30F214CF}</ProjectGuid>
-        <OutputType>Exe</OutputType>
+        <ProjectGuid>{49DDC7D0-9C20-4C77-BED9-C6BEE2F8F20F}</ProjectGuid>
+        <OutputType>Library</OutputType>
         <AppDesignerFolder>Properties</AppDesignerFolder>
         <RootNamespace>RattlerCore</RootNamespace>
         <AssemblyName>RattlerCore</AssemblyName>
@@ -38,8 +38,12 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="dev.muskrat.rattler\Rattler.cs" />
-        <Compile Include="Program.cs" />
+        <Compile Include="dev\muskrat\rattler\models\LinkStation.cs" />
+        <Compile Include="dev\muskrat\rattler\models\RattlerTransport.cs" />
+        <Compile Include="dev\muskrat\rattler\models\RattlerTransportType.cs" />
+        <Compile Include="dev\muskrat\rattler\models\Station.cs" />
+        <Compile Include="dev\muskrat\rattler\RattlerCore.cs" />
+        <Compile Include="dev\muskrat\rattler\utils\store\RattlerStore.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
