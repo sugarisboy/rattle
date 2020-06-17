@@ -12,5 +12,9 @@ namespace RattlerCore.dev.muskrat.rattler.models {
         void removeStation(Station station);
 
         bool containsStation(Station station);
+
+        int getCapacity();
+
+        double getAverageSpeed();
     }
 }
