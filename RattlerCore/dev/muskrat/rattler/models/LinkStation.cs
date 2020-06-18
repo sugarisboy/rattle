@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace RattlerCore.dev.muskrat.rattler.models {
     public class LinkStation {
-        
+
         private RattleStation A;
         private RattleStation B;
         private RattlerTransportType type;
-        
+
         public float distance;
 
         public LinkStation(RattleStation A, RattleStation B, float distance) {
@@ -23,7 +23,7 @@ namespace RattlerCore.dev.muskrat.rattler.models {
             }
 
             this.type = A.getType();
-            
+
             this.A = A;
             this.B = B;
             this.distance = distance;
@@ -39,6 +39,19 @@ namespace RattlerCore.dev.muskrat.rattler.models {
 
         public RattlerTransportType getType() {
             return type;
+        }
+
+        public LinkStation init() {
+            A.addLink(this);
+
+            try {
+                B.addLink(this);
+            } catch (Exception ex) {
+                A.removeLink(this);
+                throw;
+            }
+
+            return this;
         }
     }
 }

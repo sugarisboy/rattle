@@ -3,3 +3,6 @@ C:\Users\sugar\RiderProjects\Rattler\RattlerCore\bin\Debug\RattlerCore.pdb
 C:\Users\sugar\RiderProjects\Rattler\RattlerCore\obj\Debug\RattlerCore.csprojAssemblyReference.cache
 C:\Users\sugar\RiderProjects\Rattler\RattlerCore\obj\Debug\RattlerCore.dll
 C:\Users\sugar\RiderProjects\Rattler\RattlerCore\obj\Debug\RattlerCore.pdb
+C:\Users\sugar\RiderProjects\Rattler\RattlerCore\bin\Debug\Newtonsoft.Json.dll
+C:\Users\sugar\RiderProjects\Rattler\RattlerCore\bin\Debug\Newtonsoft.Json.xml
+C:\Users\sugar\RiderProjects\Rattler\RattlerCore\obj\Debug\RattlerCore.csproj.CopyComplete

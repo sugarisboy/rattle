@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 
 namespace RattlerCore.dev.muskrat.rattler.models {
-    public class SimpleRattleStation<T> : RattleStation where T : RattlerTransportType {
-        private T type;
+    public class SimpleRattleStation<T> : RattleStation where T : RattlerTransport {
+        private RattlerTransportType type;
         private List<LinkStation> links;
 
-        public SimpleRattleStation(T type) {
+        public SimpleRattleStation(RattlerTransportType type) {
             this.type = type;
             this.links = new List<LinkStation>();
         }
