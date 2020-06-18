@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 
 namespace RattlerCore.dev.muskrat.rattler.models {
-    public interface Station {
+    public interface RattleStation {
 
         RattlerTransportType getType();
 
@@ -11,8 +11,8 @@ namespace RattlerCore.dev.muskrat.rattler.models {
 
         void removeLink(LinkStation linkStation);
 
-        bool hasLinkAny(Station first, Station second);
+        bool hasLinkAny(RattleStation first, RattleStation second);
         
-        bool hasLink(RattlerTransportType type, Station first, Station second);
+        bool hasLink(RattlerTransportType type, RattleStation first, RattleStation second);
     }
 }

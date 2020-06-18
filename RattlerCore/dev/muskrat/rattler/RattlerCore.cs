@@ -2,15 +2,18 @@
 
 namespace RattlerCore.dev.muskrat.rattler {
     public class RattlerCore {
-        public RattlerCore() {
-            
-        }
+        public RattleStore store { get; private set; }
+
+        private RattlerStoreLoader storeLoader;
+
+        public RattlerCore() { }
 
         public void init() {
             RattlerTransportType.init();
-            
-            RattlerStore store = new RattlerStore();
-            store.loadData();
+
+            store = new RattleStore();
+            storeLoader = new RattlerStoreLoader(store);
+            storeLoader.loadData();
         }
     }
 }

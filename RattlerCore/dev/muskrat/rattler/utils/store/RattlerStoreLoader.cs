@@ -1,22 +1,26 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 
 namespace RattlerCore.dev.muskrat.rattler {
-    public class RattlerStore {
-        private const string FileName = "store.json";
+    public class RattlerStoreLoader {
+        private static string SETTINGS_FILE_NAME = "settings.json";
 
-        public RattlerStore() { }
+        private RattleStore store;
+
+        public RattlerStoreLoader(RattleStore store) {
+            this.store = store;
+        }
 
         public void loadData() {
-            string path = @"../" + FileName;
+            string path = @"../" + SETTINGS_FILE_NAME;
             bool exists = File.Exists(path);
 
             string rawJson;
-            
+
             if (!exists) {
                 File.Create(path);
                 rawJson = "{}";
-            }
-            else {
+            } else {
                 rawJson = File.ReadAllText(path);
             }
         }

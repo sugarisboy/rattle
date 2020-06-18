@@ -38,19 +38,23 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="dev\muskrat\rattler\models\ComplexStation.cs" />
+        <Compile Include="dev\muskrat\rattler\models\ComplexRattleStation.cs" />
         <Compile Include="dev\muskrat\rattler\models\ExpressTrain.cs" />
         <Compile Include="dev\muskrat\rattler\models\LinkStation.cs" />
         <Compile Include="dev\muskrat\rattler\models\Metro.cs" />
         <Compile Include="dev\muskrat\rattler\models\MultiStationTransport.cs" />
         <Compile Include="dev\muskrat\rattler\models\RattlerTransport.cs" />
         <Compile Include="dev\muskrat\rattler\models\RattlerTransportType.cs" />
-        <Compile Include="dev\muskrat\rattler\models\Station.cs" />
-        <Compile Include="dev\muskrat\rattler\models\SimpleStation.cs" />
+        <Compile Include="dev\muskrat\rattler\models\RattleStation.cs" />
+        <Compile Include="dev\muskrat\rattler\models\SimpleRattleStation.cs" />
         <Compile Include="dev\muskrat\rattler\models\Train.cs" />
         <Compile Include="dev\muskrat\rattler\models\Tram.cs" />
         <Compile Include="dev\muskrat\rattler\RattlerCore.cs" />
-        <Compile Include="dev\muskrat\rattler\utils\store\RattlerStore.cs" />
+        <Compile Include="dev\muskrat\rattler\services\RattleService.cs" />
+        <Compile Include="dev\muskrat\rattler\services\StationService.cs" />
+        <Compile Include="dev\muskrat\rattler\services\TransportService.cs" />
+        <Compile Include="dev\muskrat\rattler\utils\store\RattlerStoreLoader.cs" />
+        <Compile Include="dev\muskrat\rattler\utils\store\RattleStore.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -4,13 +4,13 @@ using System.Collections.Generic;
 namespace RattlerCore.dev.muskrat.rattler.models {
     public class LinkStation {
         
-        private Station A;
-        private Station B;
+        private RattleStation A;
+        private RattleStation B;
         private RattlerTransportType type;
         
         public float distance;
 
-        public LinkStation(Station A, Station B, float distance) {
+        public LinkStation(RattleStation A, RattleStation B, float distance) {
             if (A.Equals(B))
                 throw new ArgumentException("Станция A и станция B одинаковы!");
 
@@ -29,11 +29,11 @@ namespace RattlerCore.dev.muskrat.rattler.models {
             this.distance = distance;
         }
 
-        public Station getA() {
+        public RattleStation getA() {
             return A;
         }
 
-        public Station getB() {
+        public RattleStation getB() {
             return B;
         }
 

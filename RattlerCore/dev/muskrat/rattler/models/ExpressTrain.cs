@@ -4,8 +4,8 @@ using System.Collections.Generic;
 namespace RattlerCore.dev.muskrat.rattler.models {
     public class ExpressTrain : RattlerTransport {
         
-        private Station A;
-        private Station B;
+        private RattleStation A;
+        private RattleStation B;
         private int capacity;
         private double averageSpeed;
 
@@ -14,14 +14,14 @@ namespace RattlerCore.dev.muskrat.rattler.models {
             this.averageSpeed = 47.5;
         }
 
-        public ExpressTrain(Station A, Station B) {
+        public ExpressTrain(RattleStation A, RattleStation B) {
             this.capacity = 56;
             this.averageSpeed = 47.5;
             this.A = A;
             this.B = B;
         }
 
-        public ExpressTrain(Station A, Station B, double averageSpeed, int capacity) {
+        public ExpressTrain(RattleStation A, RattleStation B, double averageSpeed, int capacity) {
             this.capacity = capacity;
             this.averageSpeed = averageSpeed;
             this.A = A;
@@ -37,8 +37,8 @@ namespace RattlerCore.dev.muskrat.rattler.models {
             return RattlerTransportType.EXPRESS_TRAIN;
         }
 
-        public List<Station> getStations() {
-            List<Station> stations = new List<Station>();
+        public List<RattleStation> getStations() {
+            List<RattleStation> stations = new List<RattleStation>();
             if (A != null)
                 stations.Add(A);
             if (B != null)
@@ -46,7 +46,7 @@ namespace RattlerCore.dev.muskrat.rattler.models {
             return stations;
         }
 
-        public void addStation(Station station) {
+        public void addStation(RattleStation station) {
             if (A == null)
                 this.A = station;
             else if (B == null)
@@ -55,7 +55,7 @@ namespace RattlerCore.dev.muskrat.rattler.models {
                 throw new ApplicationException("Данный тип может иметь лишь две остановки");
         }
 
-        public void removeStation(Station station) {
+        public void removeStation(RattleStation station) {
             if (station.Equals(B)) {
                 this.B = null;
             } else if (station.Equals(A)) {
@@ -63,7 +63,7 @@ namespace RattlerCore.dev.muskrat.rattler.models {
             }
         }
 
-        public bool containsStation(Station station) {
+        public bool containsStation(RattleStation station) {
             return station != null && (station.Equals(A) || station.Equals(B));
         }
 

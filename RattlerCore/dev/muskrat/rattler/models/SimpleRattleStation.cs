@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 
 namespace RattlerCore.dev.muskrat.rattler.models {
-    public class SimpleStation<T> : Station where T : RattlerTransportType {
+    public class SimpleRattleStation<T> : RattleStation where T : RattlerTransportType {
         private T type;
         private List<LinkStation> links;
 
-        public SimpleStation(T type) {
+        public SimpleRattleStation(T type) {
             this.type = type;
             this.links = new List<LinkStation>();
         }
@@ -32,14 +32,14 @@ namespace RattlerCore.dev.muskrat.rattler.models {
             links.Remove(linkStation);
         }
 
-        public bool hasLinkAny(Station first, Station second) {
+        public bool hasLinkAny(RattleStation first, RattleStation second) {
             return links.Find(
                 i => i.getA().Equals(first) && i.getB().Equals(second) ||
                      i.getA().Equals(second) && i.getB().Equals(first)
             ) != null;
         }
 
-        public bool hasLink(RattlerTransportType type, Station first, Station second) {
+        public bool hasLink(RattlerTransportType type, RattleStation first, RattleStation second) {
             return links.Find(
                 i => i.getType().Equals(type) && 
                      (

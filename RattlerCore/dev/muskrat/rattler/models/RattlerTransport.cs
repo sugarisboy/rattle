@@ -5,13 +5,13 @@ namespace RattlerCore.dev.muskrat.rattler.models {
         
         RattlerTransportType getType();
 
-        List<Station> getStations();
+        List<RattleStation> getStations();
 
-        void addStation(Station station);
+        void addStation(RattleStation station);
 
-        void removeStation(Station station);
+        void removeStation(RattleStation station);
 
-        bool containsStation(Station station);
+        bool containsStation(RattleStation station);
 
         int getCapacity();
 

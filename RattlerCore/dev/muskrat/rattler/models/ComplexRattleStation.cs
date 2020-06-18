@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 namespace RattlerCore.dev.muskrat.rattler.models {
-    public class ComplexStation : Station {
+    public class ComplexRattleStation : RattleStation {
         private Dictionary<RattlerTransportType, List<LinkStation>> allLinks;
 
-        public ComplexStation() {
+        public ComplexRattleStation() {
             allLinks = new Dictionary<RattlerTransportType, List<LinkStation>>();
             foreach (var type in RattlerTransportType.getValues()) {
                 List<LinkStation> links = new List<LinkStation>();
@@ -50,14 +50,14 @@ namespace RattlerCore.dev.muskrat.rattler.models {
             allLinks[type].Remove(linkStation);
         }
 
-        public bool hasLinkAny(Station first, Station second) {
+        public bool hasLinkAny(RattleStation first, RattleStation second) {
             return getLinks().Find(
                 i => i.getA().Equals(first) && i.getB().Equals(second) ||
                      i.getA().Equals(second) && i.getB().Equals(first)
             ) != null;
         }
 
-        public bool hasLink(RattlerTransportType type, Station first, Station second) {
+        public bool hasLink(RattlerTransportType type, RattleStation first, RattleStation second) {
             List<LinkStation> links = getLinksByType(type);
             return links.Find(
                 i => i.getType().Equals(type) &&
