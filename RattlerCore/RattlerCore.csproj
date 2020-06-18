@@ -38,6 +38,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="dev\muskrat\rattler\models\ComplexStation.cs" />
         <Compile Include="dev\muskrat\rattler\models\ExpressTrain.cs" />
         <Compile Include="dev\muskrat\rattler\models\LinkStation.cs" />
         <Compile Include="dev\muskrat\rattler\models\Metro.cs" />
@@ -45,6 +46,7 @@
         <Compile Include="dev\muskrat\rattler\models\RattlerTransport.cs" />
         <Compile Include="dev\muskrat\rattler\models\RattlerTransportType.cs" />
         <Compile Include="dev\muskrat\rattler\models\Station.cs" />
+        <Compile Include="dev\muskrat\rattler\models\SimpleStation.cs" />
         <Compile Include="dev\muskrat\rattler\models\Train.cs" />
         <Compile Include="dev\muskrat\rattler\models\Tram.cs" />
         <Compile Include="dev\muskrat\rattler\RattlerCore.cs" />

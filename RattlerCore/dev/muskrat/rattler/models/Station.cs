@@ -6,5 +6,13 @@ namespace RattlerCore.dev.muskrat.rattler.models {
         RattlerTransportType getType();
 
         List<LinkStation> getLinks();
+
+        void addLink(LinkStation linkStation);
+
+        void removeLink(LinkStation linkStation);
+
+        bool hasLinkAny(Station first, Station second);
+        
+        bool hasLink(RattlerTransportType type, Station first, Station second);
     }
 }
