@@ -1,0 +1,181 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.2": {
+      "NUnit/3.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
+      "RattlerCore/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/RattlerCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RattlerCore.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win": {
+      "NUnit/3.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
+      "RattlerCore/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/RattlerCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RattlerCore.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x64": {
+      "NUnit/3.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
+      "RattlerCore/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/RattlerCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RattlerCore.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.2/win-x86": {
+      "NUnit/3.5.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/nunit.framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/nunit.framework.dll": {}
+        }
+      },
+      "RattlerCore/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/RattlerCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/RattlerCore.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NUnit/3.5.0": {
+      "sha512": "z/03NfC+ci3/OzlIlClH+nd0LZ99OU3wS74nAtLVnPo1oq6nvd+CGxTHZAc8n8xxDLeLMofZ8AjahxlROEhf/Q==",
+      "type": "package",
+      "path": "nunit/3.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.txt",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "lib/dotnet/nunit.framework.dll",
+        "lib/dotnet/nunit.framework.xml",
+        "lib/net20/NUnit.System.Linq.dll",
+        "lib/net20/nunit.framework.dll",
+        "lib/net20/nunit.framework.xml",
+        "lib/net35/nunit.framework.dll",
+        "lib/net35/nunit.framework.xml",
+        "lib/net40/nunit.framework.dll",
+        "lib/net40/nunit.framework.xml",
+        "lib/net45/nunit.framework.dll",
+        "lib/net45/nunit.framework.xml",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.dll",
+        "lib/portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10/nunit.framework.xml",
+        "nunit.3.5.0.nupkg.sha512",
+        "nunit.nuspec"
+      ]
+    },
+    "RattlerCore/1.0.0": {
+      "type": "project",
+      "path": "../RattlerCore/RattlerCore.csproj",
+      "msbuildProject": "../RattlerCore/RattlerCore.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.2": [
+      "NUnit >= 3.5.0",
+      "RattlerCore >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\sugar\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\sugar\\RiderProjects\\Rattler\\RattlerTest\\RattlerTest.csproj",
+      "projectName": "RattlerTest",
+      "projectPath": "C:\\Users\\sugar\\RiderProjects\\Rattler\\RattlerTest\\RattlerTest.csproj",
+      "packagesPath": "C:\\Users\\sugar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\sugar\\RiderProjects\\Rattler\\RattlerTest\\obj\\",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "C:\\Users\\sugar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net472"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net472": {
+          "projectReferences": {
+            "C:\\Users\\sugar\\RiderProjects\\Rattler\\RattlerCore\\RattlerCore.csproj": {
+              "projectPath": "C:\\Users\\sugar\\RiderProjects\\Rattler\\RattlerCore\\RattlerCore.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net472": {
+        "dependencies": {
+          "NUnit": {
+            "target": "Package",
+            "version": "[3.5.0, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

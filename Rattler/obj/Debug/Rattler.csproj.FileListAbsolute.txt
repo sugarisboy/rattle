@@ -15,3 +15,5 @@ C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.pdb
 C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\RattlerCore.pdb
 C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.csproj.CopyComplete
 C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\RattlerCore.dll
+C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\Newtonsoft.Json.dll
+C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\Newtonsoft.Json.xml

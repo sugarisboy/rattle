@@ -1,0 +1,11 @@
+C:\Users\sugar\RiderProjects\Rattler\RattlerTest\bin\Debug\RattlerTest.dll
+C:\Users\sugar\RiderProjects\Rattler\RattlerTest\bin\Debug\RattlerTest.pdb
+C:\Users\sugar\RiderProjects\Rattler\RattlerTest\bin\Debug\nunit.framework.dll
+C:\Users\sugar\RiderProjects\Rattler\RattlerTest\bin\Debug\RattlerCore.dll
+C:\Users\sugar\RiderProjects\Rattler\RattlerTest\bin\Debug\Newtonsoft.Json.dll
+C:\Users\sugar\RiderProjects\Rattler\RattlerTest\bin\Debug\RattlerCore.pdb
+C:\Users\sugar\RiderProjects\Rattler\RattlerTest\bin\Debug\Newtonsoft.Json.xml
+C:\Users\sugar\RiderProjects\Rattler\RattlerTest\obj\Debug\RattlerTest.csprojAssemblyReference.cache
+C:\Users\sugar\RiderProjects\Rattler\RattlerTest\obj\Debug\RattlerTest.csproj.CopyComplete
+C:\Users\sugar\RiderProjects\Rattler\RattlerTest\obj\Debug\RattlerTest.dll
+C:\Users\sugar\RiderProjects\Rattler\RattlerTest\obj\Debug\RattlerTest.pdb

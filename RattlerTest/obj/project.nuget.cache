@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "N0sR6IPQtr9cLSy3Oz+nPrIcs2G5Zu/oOFSc8SbpHvisSLWCOo5trbtqJIcB7OkaXQhsJZx3RQOeGqhcdGRKHA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sugar\\RiderProjects\\Rattler\\RattlerTest\\RattlerTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\sugar\\.nuget\\packages\\nunit\\3.5.0\\nunit.3.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
