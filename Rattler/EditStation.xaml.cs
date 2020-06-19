@@ -13,7 +13,7 @@ namespace Rattler {
         public EditStation(RattlerStation station, WindowType type) {
             InitializeComponent();
             Type = type;
-            Station = Station;
+            Station = station;
 
             if (type == WindowType.EDIT) {
                 BoxName.Text = station.name;
@@ -22,6 +22,7 @@ namespace Rattler {
                 BoxMetro.IsEnabled = false;
                 BoxTrain.IsEnabled = false;
                 BoxExpressTrain.IsEnabled = false;
+                BoxComplex.IsEnabled = false;
 
                 convertFromType(station.getType()).IsChecked = true;
             }
