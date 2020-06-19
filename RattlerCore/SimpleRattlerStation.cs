@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 
 namespace RattlerCore {
-    public class SimpleRattleStation<T> : RattleStation where T : RattlerTransport {
+    public class SimpleRattlerStation<T> : RattlerStation where T : RattlerTransport {
         private RattlerTransportType type;
         private List<LinkStation> links;
 
-        public SimpleRattleStation(string name, RattlerTransportType type) {
+        public SimpleRattlerStation(string name, RattlerTransportType type) {
             this.name = name;
             this.type = type;
             this.links = new List<LinkStation>();
@@ -34,14 +34,14 @@ namespace RattlerCore {
             links.Remove(linkStation);
         }
 
-        public bool hasLinkAny(RattleStation first, RattleStation second) {
+        public bool hasLinkAny(RattlerStation first, RattlerStation second) {
             return links.Find(
                 i => i.getA().Equals(first) && i.getB().Equals(second) ||
                      i.getA().Equals(second) && i.getB().Equals(first)
             ) != null;
         }
 
-        public bool hasLink(RattlerTransportType type, RattleStation first, RattleStation second) {
+        public bool hasLink(RattlerTransportType type, RattlerStation first, RattlerStation second) {
             return links.Find(
                 i => i.getType().Equals(type) && 
                      (

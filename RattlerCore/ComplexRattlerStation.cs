@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 
 namespace RattlerCore {
-    public class ComplexRattleStation : RattleStation {
+    public class ComplexRattlerStation : RattlerStation {
         private Dictionary<RattlerTransportType, List<LinkStation>> allLinks;
 
         public string name { get; set; }
 
-        public ComplexRattleStation(string name) {
+        public ComplexRattlerStation(string name) {
             this.name = name;
             allLinks = new Dictionary<RattlerTransportType, List<LinkStation>>();
             foreach (var type in RattlerTransportType.getValues()) {
@@ -53,14 +53,14 @@ namespace RattlerCore {
             allLinks[type].Remove(linkStation);
         }
 
-        public bool hasLinkAny(RattleStation first, RattleStation second) {
+        public bool hasLinkAny(RattlerStation first, RattlerStation second) {
             return getLinks().Find(
                 i => i.getA().Equals(first) && i.getB().Equals(second) ||
                      i.getA().Equals(second) && i.getB().Equals(first)
             ) != null;
         }
 
-        public bool hasLink(RattlerTransportType type, RattleStation first, RattleStation second) {
+        public bool hasLink(RattlerTransportType type, RattlerStation first, RattlerStation second) {
             List<LinkStation> links = getLinksByType(type);
             return links.Find(
                 i => i.getType().Equals(type) &&
