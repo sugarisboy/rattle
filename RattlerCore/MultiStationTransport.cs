@@ -6,6 +6,7 @@ namespace RattlerCore {
     public abstract class MultiStationTransport : RattlerTransport {
         private List<RattleStation> stations = new List<RattleStation>();
 
+        public string name { get; set; }
         public int capacity { get; set; }
         public double averageSpeed { get; set; }
         public abstract RattlerTransportType getType();
@@ -30,6 +31,8 @@ namespace RattlerCore {
                 } else {
                     throw new ApplicationException("Путь между станциями не найден!");
                 }
+            } else {
+                stations.Add(station);
             }
         }
 
@@ -40,5 +43,7 @@ namespace RattlerCore {
         public bool containsStation(RattleStation station) {
             return stations.Contains(station);
         }
+
+        public long id { get; set; }
     }
 }

@@ -1,12 +1,14 @@
 ﻿namespace RattlerCore {
     public class Tram : MultiStationTransport {
 
-        public Tram() {
+        public Tram(string name) {
+            this.name = name;
             this.capacity = 56;
             this.averageSpeed = 47.5;
         }
 
-        public Tram(double averageSpeed, int capacity) {
+        public Tram(string name, double averageSpeed, int capacity) {
+            this.name = name;
             this.averageSpeed = averageSpeed;
             this.capacity = capacity;
         }

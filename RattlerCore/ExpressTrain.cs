@@ -6,17 +6,21 @@ namespace RattlerCore {
         
         private RattleStation A;
         private RattleStation B;
-        
+
+
+        public string name { get; set; }
         public int capacity { get; set; }
         public double averageSpeed { get; set; }
 
 
-        public ExpressTrain() {
+        public ExpressTrain(string name) {
+            this.name = name;
             this.capacity = 56;
             this.averageSpeed = 47.5;
         }
 
-        public ExpressTrain(RattleStation A, RattleStation B) {
+        public ExpressTrain(string name, RattleStation A, RattleStation B) {
+            this.name = name;
             this.capacity = 56;
             this.averageSpeed = 47.5;
             this.A = A;
@@ -69,5 +73,7 @@ namespace RattlerCore {
         public bool containsStation(RattleStation station) {
             return station != null && (station.Equals(A) || station.Equals(B));
         }
+
+        public long id { get; set; }
     }
 }

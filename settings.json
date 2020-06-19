@@ -1,1 +1,61 @@
-{"transports":[{"capacity":200,"average-speed":44.35,"type":"Metro"}]}
+{
+  "max-transport-id": 5,
+  "max-station-id": 5,
+  "stations": [
+    {
+      "id": 1,
+      "name": "Yaroslavl",
+      "type": "Metro"
+    },
+    {
+      "id": 2,
+      "name": "Rybinsk",
+      "type": "Metro"
+    },
+    {
+      "id": 3,
+      "name": "Yaroslavl",
+      "type": "Metro"
+    },
+    {
+      "id": 4,
+      "name": "Rybinsk",
+      "type": "Metro"
+    }
+  ],
+  "transports": [
+    {
+      "id": 3,
+      "capacity": 400,
+      "average-speed": 94.35,
+      "type": "Metro",
+      "name": "red way",
+      "stations": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": 4,
+      "capacity": 265,
+      "average-speed": 68.75,
+      "type": "Train",
+      "name": "11c",
+      "stations": []
+    }
+  ],
+  "links": [
+    {
+      "station1": 1,
+      "station2": 2,
+      "distance": 10.0,
+      "type": "Metro"
+    },
+    {
+      "station1": 3,
+      "station2": 4,
+      "distance": 10.0,
+      "type": "Metro"
+    }
+  ]
+}

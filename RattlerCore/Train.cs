@@ -5,12 +5,14 @@ using Newtonsoft.Json.Linq;
 namespace RattlerCore {
     public class Train : MultiStationTransport {
 
-        public Train() {
+        public Train(string name) {
+            this.name = name;
             this.capacity = 265;
             this.averageSpeed = 68.75;
         }
 
-        public Train(double averageSpeed, int capacity) {
+        public Train(string name, double averageSpeed, int capacity) {
+            this.name = name;
             this.averageSpeed = averageSpeed;
             this.capacity = capacity;
         }

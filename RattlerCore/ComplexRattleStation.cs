@@ -5,7 +5,10 @@ namespace RattlerCore {
     public class ComplexRattleStation : RattleStation {
         private Dictionary<RattlerTransportType, List<LinkStation>> allLinks;
 
-        public ComplexRattleStation() {
+        public string name { get; set; }
+
+        public ComplexRattleStation(string name) {
+            this.name = name;
             allLinks = new Dictionary<RattlerTransportType, List<LinkStation>>();
             foreach (var type in RattlerTransportType.getValues()) {
                 List<LinkStation> links = new List<LinkStation>();
@@ -71,5 +74,7 @@ namespace RattlerCore {
         private List<LinkStation> getLinksByType(RattlerTransportType type) {
             return allLinks.ContainsKey(type) ? allLinks[type] : null;
         }
+
+        public long id { get; set; }
     }
 }

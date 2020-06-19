@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 
 namespace RattlerCore {
-    public interface RattleStation {
+    public interface RattleStation : Numerable {
+        
+        public string name { get; set; }
 
         RattlerTransportType getType();
 

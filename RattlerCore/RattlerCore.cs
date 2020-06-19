@@ -5,6 +5,9 @@ namespace RattlerCore {
 
         private RattlerStoreLoader storeLoader;
 
+        public StationService stationService;
+        public TransportService transportService;
+
         public RattlerCore() {
             init();
         }
@@ -12,8 +15,11 @@ namespace RattlerCore {
         public void init() {
             RattlerTransportType.init();
 
+            stationService = new StationService(this);
+            transportService = new TransportService(this);
+            
             store = new RattlerStore();
-            storeLoader = new RattlerStoreLoader(store);
+            storeLoader = new RattlerStoreLoader(this);
             storeLoader.loadData();
         }
 

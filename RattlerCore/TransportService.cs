@@ -3,18 +3,23 @@
 namespace RattlerCore {
     public class TransportService : RattleService {
 
-        private List<RattlerTransport> transports;
-        
         public TransportService(RattlerCore core) : base(core) {
-            transports = core.store.transports;
+            
         }
 
         public void addTransport(RattlerTransport transport) {
-            transports.Add(transport);
+            if (transport.id == 0) {
+                transport.id = core.store.maxTransportId++;
+            } else {
+                if (transport.id > core.store.maxTransportId) {
+                    core.store.maxTransportId = transport.id + 1;
+                }
+            }
+            core.store.transports.Add(transport);
         }
 
         public void removeTransport(RattlerTransport transport) {
-            transports.Add(transport);
+            core.store.transports.Add(transport);
         }
     }
 }

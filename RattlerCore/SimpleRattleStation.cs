@@ -6,10 +6,13 @@ namespace RattlerCore {
         private RattlerTransportType type;
         private List<LinkStation> links;
 
-        public SimpleRattleStation(RattlerTransportType type) {
+        public SimpleRattleStation(string name, RattlerTransportType type) {
+            this.name = name;
             this.type = type;
             this.links = new List<LinkStation>();
         }
+
+        public string name { get; set; }
 
         public RattlerTransportType getType() {
             return type;
@@ -47,5 +50,7 @@ namespace RattlerCore {
                      )
             ) != null;
         }
+
+        public long id { get; set; }
     }
 }

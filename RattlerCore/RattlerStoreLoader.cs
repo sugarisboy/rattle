@@ -4,17 +4,22 @@ using System.IO;
 using Newtonsoft.Json;
 
 namespace RattlerCore {
-    public class RattlerStoreLoader {
+    public class RattlerStoreLoader : RattleService {
         private static string SETTINGS_FILE_NAME = "settings.json";
 
         private RattlerStore store;
 
-        public RattlerStoreLoader(RattlerStore store) {
-            this.store = store;
+        public RattlerStoreLoader(RattlerCore core) : base(core) {
+            this.store = core.store;
 
             JsonConvert.DefaultSettings = () => new JsonSerializerSettings {
                 
-                Converters = new List<JsonConverter> {new TransportJsonConverter()}
+                Converters = new List<JsonConverter> {
+                    new TransportJsonConverter(core),
+                    new StationJsonConverter(),
+                    new LinkJsonConverter(core),
+                    new StoreJsonConverter(core)
+                }
             };
         }
 
@@ -32,32 +37,33 @@ namespace RattlerCore {
                 rawJson = File.ReadAllText(path);
             }
 
-            Console.WriteLine("Read from settings:\n" + rawJson);
             RattlerStore loaded = JsonConvert.DeserializeObject<RattlerStore>(rawJson);
-            
-            store.stations = loaded.stations;
-            store.transports = loaded.transports;
 
-            demoData();
+            //demoData();
         }
 
         public void saveData() {
-            Console.WriteLine(JsonConvert.SerializeObject(store, Formatting.Indented));
+            string path = @"C:\Users\sugar\RiderProjects\Rattler\" + SETTINGS_FILE_NAME;
+            string json = JsonConvert.SerializeObject(store, Formatting.Indented);
+            File.WriteAllText(path, json);
         }
 
         public void demoData() {
-            SimpleRattleStation<Metro> station1 = new SimpleRattleStation<Metro>(RattlerTransportType.METRO);
-            SimpleRattleStation<Metro> station2 = new SimpleRattleStation<Metro>(RattlerTransportType.METRO);
-            store.stations.Add(station1);
-            store.stations.Add(station2);
+            SimpleRattleStation<Metro> station1 = new SimpleRattleStation<Metro>("Yaroslavl", RattlerTransportType.METRO);
+            SimpleRattleStation<Metro> station2 = new SimpleRattleStation<Metro>("Rybinsk", RattlerTransportType.METRO);
+            
+            core.stationService.addStation(station1);
+            core.stationService.addStation(station2);
 
-            Metro metro = new Metro();
-            store.transports.Add(metro);
+            Metro metro = new Metro("red way");
+            core.transportService.addTransport(metro);
 
-            Train train = new Train();
-            store.transports.Add(train);
+            Train train = new Train("11c");
+            core.transportService.addTransport(train);
 
-            LinkStation link = new LinkStation(station1, station2, 10).init();
+            
+            LinkStation link = new LinkStation(station1, station2, 10);
+            core.stationService.addLink(link);
 
             metro.addStation(station1);
             metro.addStation(station2);

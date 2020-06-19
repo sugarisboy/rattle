@@ -7,9 +7,9 @@ namespace RattlerCore {
         private RattleStation B;
         private RattlerTransportType type;
 
-        public float distance;
+        public double distance;
 
-        public LinkStation(RattleStation A, RattleStation B, float distance) {
+        public LinkStation(RattleStation A, RattleStation B, double distance) {
             if (A.Equals(B))
                 throw new ArgumentException("Станция A и станция B одинаковы!");
 
@@ -38,19 +38,6 @@ namespace RattlerCore {
 
         public RattlerTransportType getType() {
             return type;
-        }
-
-        public LinkStation init() {
-            A.addLink(this);
-
-            try {
-                B.addLink(this);
-            } catch (Exception ex) {
-                A.removeLink(this);
-                throw;
-            }
-
-            return this;
         }
     }
 }

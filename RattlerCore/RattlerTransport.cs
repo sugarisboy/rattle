@@ -3,7 +3,9 @@ using System.Dynamic;
 using Newtonsoft.Json;
 
 namespace RattlerCore {
-    public interface RattlerTransport {
+    public interface RattlerTransport : Numerable {
+        
+        public string name { get; set; }
         public int capacity { get; set; }
         public double averageSpeed { get; set; }
 

@@ -45,9 +45,11 @@
     <ItemGroup>
         <Compile Include="ComplexRattleStation.cs" />
         <Compile Include="ExpressTrain.cs" />
+        <Compile Include="LinkJsonConverter.cs" />
         <Compile Include="LinkStation.cs" />
         <Compile Include="Metro.cs" />
         <Compile Include="MultiStationTransport.cs" />
+        <Compile Include="Numerable.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="RattlerCore.cs" />
         <Compile Include="RattlerStoreLoader.cs" />
@@ -57,7 +59,9 @@
         <Compile Include="RattleStation.cs" />
         <Compile Include="RattlerStore.cs" />
         <Compile Include="SimpleRattleStation.cs" />
+        <Compile Include="StationJsonConverter.cs" />
         <Compile Include="StationService.cs" />
+        <Compile Include="StoreJsonConverter.cs" />
         <Compile Include="TransportJsonConverter.cs" />
         <Compile Include="Train.cs" />
         <Compile Include="Tram.cs" />
