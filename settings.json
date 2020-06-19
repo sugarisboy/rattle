@@ -4,23 +4,28 @@
   "stations": [
     {
       "id": 1,
-      "name": "Yaroslavl",
+      "name": "Москва-Рижская",
       "type": "Metro"
     },
     {
       "id": 2,
-      "name": "Rybinsk",
+      "name": "Москва-Курская",
       "type": "Metro"
     },
     {
       "id": 3,
-      "name": "Yaroslavl",
-      "type": "Metro"
+      "name": "Ярославль",
+      "type": "Train"
     },
     {
       "id": 4,
-      "name": "Rybinsk",
-      "type": "Metro"
+      "name": "Тутаев",
+      "type": "Train"
+    },
+    {
+      "id": 5,
+      "name": "Рыбинск",
+      "type": "Train"
     }
   ],
   "transports": [
@@ -28,19 +33,31 @@
       "id": 3,
       "capacity": 400,
       "average-speed": 94.35,
-      "type": "Metro",
-      "name": "red way",
+      "type": "Train",
+      "name": "Ярославль-Рыбинск",
       "stations": [
         3,
-        4
+        4,
+        5
       ]
     },
     {
       "id": 4,
       "capacity": 265,
       "average-speed": 68.75,
-      "type": "Train",
+      "type": "Metro",
       "name": "11c",
+      "stations": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": 1,
+      "capacity": 265,
+      "average-speed": 68.75,
+      "type": "Tram",
+      "name": "22с",
       "stations": []
     }
   ],
@@ -55,7 +72,13 @@
       "station1": 3,
       "station2": 4,
       "distance": 10.0,
-      "type": "Metro"
+      "type": "Train"
+    },
+    {
+      "station1": 4,
+      "station2": 5,
+      "distance": 10.0,
+      "type": "Train"
     }
   ]
 }

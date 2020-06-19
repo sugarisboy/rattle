@@ -4,15 +4,15 @@ using Newtonsoft.Json;
 
 namespace RattlerCore {
     public abstract class MultiStationTransport : RattlerTransport {
-        private List<RattleStation> stations = new List<RattleStation>();
+        private List<RattlerStation> stations = new List<RattlerStation>();
 
+        public abstract RattlerTransportType Type { get; }
         public string name { get; set; }
         public int capacity { get; set; }
         public double averageSpeed { get; set; }
-        public abstract RattlerTransportType getType();
 
-        public List<RattleStation> getStations() {
-            List<RattleStation> copy = new List<RattleStation>();
+        public List<RattlerStation> getStations() {
+            List<RattlerStation> copy = new List<RattlerStation>();
             foreach (var station in stations) {
                 copy.Add(station);
             }
@@ -20,12 +20,12 @@ namespace RattlerCore {
             return copy;
         }
 
-        public void addStation(RattleStation station) {
+        public void addStation(RattlerStation station) {
             if (!station.getType().Equals(getType()))
                 throw new ArgumentException("Тип станции не подходит для данного транспорта!");
 
             if (stations.Count > 0) {
-                RattleStation last = stations[stations.Count - 1];
+                RattlerStation last = stations[stations.Count - 1];
                 if (last.hasLink(getType(), last, station)) {
                     stations.Add(station);
                 } else {
@@ -36,13 +36,15 @@ namespace RattlerCore {
             }
         }
 
-        public void removeStation(RattleStation station) {
+        public void removeStation(RattlerStation station) {
             stations.Remove(station);
         }
 
-        public bool containsStation(RattleStation station) {
+        public bool containsStation(RattlerStation station) {
             return stations.Contains(station);
         }
+
+        public abstract RattlerTransportType getType();
 
         public long id { get; set; }
     }

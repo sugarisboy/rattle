@@ -59,10 +59,10 @@ namespace RattlerCore {
                 core.store.maxTransportId = obj["max-station-id"] != null ? obj["max-station-id"].Value<long>() : 1;
                 
                 // Load stations
-                List<RattleStation> stations = new List<RattleStation>();
+                List<RattlerStation> stations = new List<RattlerStation>();
                 if (obj["stations"] != null) {
                     foreach (JToken jToken in obj["stations"]) {
-                        RattleStation station = JsonConvert.DeserializeObject<RattleStation>(jToken.ToString());
+                        RattlerStation station = JsonConvert.DeserializeObject<RattlerStation>(jToken.ToString());
                         core.stationService.addStation(station);
                     }
                 }

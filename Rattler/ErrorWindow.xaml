@@ -5,8 +5,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Rattler"
         mc:Ignorable="d"
-        Title="ErrorWindow" Height="450" Width="800">
+        Title="Error" Height="200" Width="400">
     <Grid>
-        
+        <TextBlock x:Name="Message" TextAlignment="Center" Margin="0,25,0,0" TextWrapping="Wrap" Width="360" FontSize="18">error</TextBlock>
+        <Button Width="120" Height="40" Margin="0,100,0,0" Click="button_close">Закрыть</Button>
     </Grid>
 </Window>

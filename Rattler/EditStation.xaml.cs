@@ -5,30 +5,25 @@ using System.Windows.Controls;
 using RattlerCore;
 
 namespace Rattler {
-    public partial class EditTransport : Window {
-        public RattlerTransport Transport;
+    public partial class EditStation : Window {
+        public RattlerStation Station;
         public WindowType Type;
-        private RattlerTransportType transportType;
+        private RattlerTransportType stationType;
 
-        public EditTransport(RattlerTransport transport, WindowType type) {
+        public EditStation(RattlerStation station, WindowType type) {
             InitializeComponent();
             Type = type;
-            Transport = transport;
+            Station = Station;
 
             if (type == WindowType.EDIT) {
-                BoxName.Text = transport.name;
-                BoxCapacity.Text = transport.capacity.ToString();
-                BoxSpeed.Text = transport.averageSpeed.ToString();
+                BoxName.Text = station.name;
 
                 BoxTram.IsEnabled = false;
                 BoxMetro.IsEnabled = false;
                 BoxTrain.IsEnabled = false;
                 BoxExpressTrain.IsEnabled = false;
 
-                convertFromType(transport.getType()).IsChecked = true;
-            } else {
-                BoxCapacity.Text = "0";
-                BoxSpeed.Text = "0.0";
+                convertFromType(station.getType()).IsChecked = true;
             }
         }
 
@@ -50,7 +45,8 @@ namespace Rattler {
             BoxMetro.IsChecked = true;
             BoxTrain.IsChecked = false;
             BoxExpressTrain.IsChecked = false;
-            this.transportType = RattlerTransportType.METRO;
+            BoxComplex.IsChecked = false;
+            this.stationType = RattlerTransportType.METRO;
         }
 
         private void setTram(object sender, RoutedEventArgs e) {
@@ -58,7 +54,8 @@ namespace Rattler {
             BoxMetro.IsChecked = false;
             BoxTrain.IsChecked = false;
             BoxExpressTrain.IsChecked = false;
-            this.transportType = RattlerTransportType.TRAM;
+            BoxComplex.IsChecked = false;
+            this.stationType = RattlerTransportType.TRAM;
         }
 
         private void setTrain(object sender, RoutedEventArgs e) {
@@ -66,7 +63,8 @@ namespace Rattler {
             BoxMetro.IsChecked = false;
             BoxTrain.IsChecked = true;
             BoxExpressTrain.IsChecked = false;
-            this.transportType = RattlerTransportType.TRAIN;
+            BoxComplex.IsChecked = false;
+            this.stationType = RattlerTransportType.TRAIN;
         }
 
         private void setExpressTrain(object sender, RoutedEventArgs e) {
@@ -74,13 +72,21 @@ namespace Rattler {
             BoxMetro.IsChecked = false;
             BoxTrain.IsChecked = false;
             BoxExpressTrain.IsChecked = true;
-            this.transportType = RattlerTransportType.EXPRESS_TRAIN;
+            BoxComplex.IsChecked = false;
+            this.stationType = RattlerTransportType.EXPRESS_TRAIN;
+        }
+
+        private void setComplex(object sender, RoutedEventArgs e) {
+            BoxTram.IsChecked = false;
+            BoxMetro.IsChecked = false;
+            BoxTrain.IsChecked = false;
+            BoxExpressTrain.IsChecked = false;
+            BoxComplex.IsChecked = true;
+            this.stationType = RattlerTransportType.COMPLEX;
         }
 
         private void done(object sender, RoutedEventArgs e) {
             string name;
-            int capacity = 0;
-            double averageSpeed = 0;
 
             if (BoxName.Text.Trim().Length > 0) {
                 name = BoxName.Text;
@@ -88,45 +94,28 @@ namespace Rattler {
                 new ErrorWindow("Ошибка в имени").Show();
                 return;
             }
-
-            try {
-                var boxCapacityText = BoxCapacity.Text;
-                capacity = int.Parse(boxCapacityText);
-            } catch (Exception ex) {
-                new ErrorWindow("Ошибка вместимости: " + ex.Message).Show();
-                return;
-            }
-
-            try {
-                var BoxSpeedText = BoxSpeed.Text;
-                averageSpeed = double.Parse(BoxSpeedText);
-            } catch (Exception ex) {
-                new ErrorWindow("Ошибка ср. скорости: " + ex.Message).Show();
-                return;
-            }
             
             if (Type == WindowType.CREATE) {
-                if (RattlerTransportType.TRAM.Equals(transportType))
-                    Transport = new Tram(name);
-                else if (RattlerTransportType.METRO.Equals(transportType))
-                    Transport = new Tram(name);
-                else if (RattlerTransportType.TRAIN.Equals(transportType))
-                    Transport = new Tram(name);
-                else if (RattlerTransportType.EXPRESS_TRAIN.Equals(transportType))
-                    Transport = new Tram(name);
+                if (RattlerTransportType.TRAM.Equals(stationType))
+                    Station = new SimpleRattlerStation<Tram>(name, stationType);
+                else if (RattlerTransportType.METRO.Equals(stationType))
+                    Station = new SimpleRattlerStation<Metro>(name, stationType);
+                else if (RattlerTransportType.TRAIN.Equals(stationType))
+                    Station = new SimpleRattlerStation<Train>(name, stationType);
+                else if (RattlerTransportType.EXPRESS_TRAIN.Equals(stationType))
+                    Station = new SimpleRattlerStation<ExpressTrain>(name, stationType);
+                else if (RattlerTransportType.COMPLEX.Equals(stationType))
+                    Station = new ComplexRattlerStation(name);
                 else {
                     new ErrorWindow("Не выбран тип транспорта!").Show();
                     return;
                 }
 
-                MainWindow.core.transportService.addTransport(Transport);
+                MainWindow.core.stationService.addStation(Station);
             } else {
-                Transport.name = name;
+                Station.name = name;
             }
 
-            Transport.averageSpeed = averageSpeed;
-            Transport.capacity = capacity;
-            
             MainWindow.main.updateGrids();
             Close();
         }

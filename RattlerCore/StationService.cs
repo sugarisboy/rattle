@@ -8,7 +8,7 @@ namespace RattlerCore {
         public StationService(RattlerCore core) : base(core) {
         }
 
-        public void addStation(RattleStation station) {
+        public void addStation(RattlerStation station) {
             if (station.id == 0) {
                 station.id = core.store.maxStationId++;
             } else {
@@ -19,13 +19,27 @@ namespace RattlerCore {
             core.store.stations.Add(station);
         }
 
-        public void removeStation(RattleStation station) {
-            core.store.stations.Add(station);
+        public void removeStation(RattlerStation station) {
+            if (core.store.transports.Count(i => i.getStations().Contains(station)) != 0) {
+                throw new ApplicationException("Нельзя удалить станцию, так как ее используют некоторые маршруты!");
+            }
+
+            core.store.stations.Remove(station);
+
+            List<LinkStation> forDelete = new List<LinkStation>();
+            
+            foreach (var link in core.store.links) {
+                if (link.getA().Equals(station) || link.getB().Equals(station)) {
+                    forDelete.Add(link);
+                }
+            }
+            
+            forDelete.ForEach(i => core.stationService.removeLink(i));
         }
         
         public LinkStation addLink(LinkStation linkStation) {
-            RattleStation A = linkStation.getA();
-            RattleStation B = linkStation.getB();
+            RattlerStation A = linkStation.getA();
+            RattlerStation B = linkStation.getB();
             
             A.addLink(linkStation);
 
@@ -47,7 +61,7 @@ namespace RattlerCore {
             core.store.links.Remove(linkStation);
         }
 
-        public RattleStation getById(long id) {
+        public RattlerStation getById(long id) {
             try {
                 return core.store.stations.First(i => i.id == id);
             } catch (InvalidOperationException e) {

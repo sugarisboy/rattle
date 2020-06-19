@@ -43,8 +43,8 @@ namespace RattlerCore {
                 int id2 = obj["station2"] != null ? obj["station2"].Value<int>() : 0;
                 double distance = obj["station2"] != null ? obj["distance"].Value<double>() : 0;
 
-                RattleStation station1 = core.stationService.getById(id1);
-                RattleStation station2 = core.stationService.getById(id2);
+                RattlerStation station1 = core.stationService.getById(id1);
+                RattlerStation station2 = core.stationService.getById(id2);
 
                 LinkStation linkStation = new LinkStation(station1, station2, distance);
 

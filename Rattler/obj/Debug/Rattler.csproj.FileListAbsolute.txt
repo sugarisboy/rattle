@@ -17,3 +17,9 @@ C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\Rattler.csproj.CopyComple
 C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\RattlerCore.dll
 C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\Newtonsoft.Json.dll
 C:\Users\sugar\RiderProjects\Rattler\Rattler\bin\Debug\Newtonsoft.Json.xml
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\ErrorWindow.g.cs
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\ErrorWindow.baml
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\EditTransport.g.cs
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\EditTransport.baml
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\EditStation.g.cs
+C:\Users\sugar\RiderProjects\Rattler\Rattler\obj\Debug\EditStation.baml

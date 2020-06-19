@@ -5,6 +5,8 @@ using Newtonsoft.Json;
 
 namespace RattlerCore {
     public class RattlerStoreLoader : RattleService {
+
+        private static string ABSOLUTHE_PATH = @"C:\Users\sugar\RiderProjects\Rattler\";
         private static string SETTINGS_FILE_NAME = "settings.json";
 
         private RattlerStore store;
@@ -24,7 +26,7 @@ namespace RattlerCore {
         }
 
         public void loadData() {
-            string path = @"C:\Users\sugar\RiderProjects\Rattler\" + SETTINGS_FILE_NAME;
+            string path = ABSOLUTHE_PATH + SETTINGS_FILE_NAME;
             bool exists = File.Exists(path);
 
             string rawJson;
@@ -43,14 +45,14 @@ namespace RattlerCore {
         }
 
         public void saveData() {
-            string path = @"C:\Users\sugar\RiderProjects\Rattler\" + SETTINGS_FILE_NAME;
+            string path = ABSOLUTHE_PATH + SETTINGS_FILE_NAME;
             string json = JsonConvert.SerializeObject(store, Formatting.Indented);
             File.WriteAllText(path, json);
         }
 
         public void demoData() {
-            SimpleRattleStation<Metro> station1 = new SimpleRattleStation<Metro>("Yaroslavl", RattlerTransportType.METRO);
-            SimpleRattleStation<Metro> station2 = new SimpleRattleStation<Metro>("Rybinsk", RattlerTransportType.METRO);
+            SimpleRattlerStation<Metro> station1 = new SimpleRattlerStation<Metro>("Yaroslavl", RattlerTransportType.METRO);
+            SimpleRattlerStation<Metro> station2 = new SimpleRattlerStation<Metro>("Rybinsk", RattlerTransportType.METRO);
             
             core.stationService.addStation(station1);
             core.stationService.addStation(station2);

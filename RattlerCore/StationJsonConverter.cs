@@ -3,8 +3,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
 namespace RattlerCore {
-    public class StationJsonConverter : JsonConverter<RattleStation> {
-        public override void WriteJson(JsonWriter writer, RattleStation value, JsonSerializer serializer) {
+    public class StationJsonConverter : JsonConverter<RattlerStation> {
+        public override void WriteJson(JsonWriter writer, RattlerStation value, JsonSerializer serializer) {
             writer.WriteStartObject();
             writer.WritePropertyName("id");
             writer.WriteValue(value.id);
@@ -15,8 +15,8 @@ namespace RattlerCore {
             writer.WriteEndObject();
         }
 
-        public override RattleStation ReadJson(
-            JsonReader reader, Type objectType, RattleStation existingValue, bool hasExistingValue,
+        public override RattlerStation ReadJson(
+            JsonReader reader, Type objectType, RattlerStation existingValue, bool hasExistingValue,
             JsonSerializer serializer
         ) {
             if (reader.TokenType.Equals(JsonToken.StartObject)) {
@@ -29,27 +29,27 @@ namespace RattlerCore {
                 string name = obj["name"] != null ? obj["name"].Value<string>() : "unnamed";
 
                 if (type.Equals(RattlerTransportType.COMPLEX)) {
-                    ComplexRattleStation station = new ComplexRattleStation(name);
+                    ComplexRattlerStation station = new ComplexRattlerStation(name);
                     station.id = id;
                     station.name = name;
                     return station;
                 } else if (type.Equals(RattlerTransportType.METRO)) {
-                    SimpleRattleStation<Metro> station = new SimpleRattleStation<Metro>(name, type);
+                    SimpleRattlerStation<Metro> station = new SimpleRattlerStation<Metro>(name, type);
                     station.id = id;
                     station.name = name;
                     return station;
                 } else if (type.Equals(RattlerTransportType.TRAIN)) {
-                    SimpleRattleStation<Train> station = new SimpleRattleStation<Train>(name, type);
+                    SimpleRattlerStation<Train> station = new SimpleRattlerStation<Train>(name, type);
                     station.id = id;
                     station.name = name;
                     return station;
                 } else if (type.Equals(RattlerTransportType.TRAM)) {
-                    SimpleRattleStation<Tram> station = new SimpleRattleStation<Tram>(name, type);
+                    SimpleRattlerStation<Tram> station = new SimpleRattlerStation<Tram>(name, type);
                     station.id = id;
                     station.name = name;
                     return station;
                 } else if (type.Equals(RattlerTransportType.EXPRESS_TRAIN)) {
-                    SimpleRattleStation<ExpressTrain> station = new SimpleRattleStation<ExpressTrain>(name, type);
+                    SimpleRattlerStation<ExpressTrain> station = new SimpleRattlerStation<ExpressTrain>(name, type);
                     station.id = id;
                     station.name = name;
                     return station;

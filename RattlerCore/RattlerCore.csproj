@@ -43,7 +43,7 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="ComplexRattleStation.cs" />
+        <Compile Include="ComplexRattlerStation.cs" />
         <Compile Include="ExpressTrain.cs" />
         <Compile Include="LinkJsonConverter.cs" />
         <Compile Include="LinkStation.cs" />
@@ -55,10 +55,10 @@
         <Compile Include="RattlerStoreLoader.cs" />
         <Compile Include="RattlerTransport.cs" />
         <Compile Include="RattlerTransportType.cs" />
-        <Compile Include="RattleService.cs" />
-        <Compile Include="RattleStation.cs" />
+        <Compile Include="RattlerService.cs" />
+        <Compile Include="RattlerStation.cs" />
         <Compile Include="RattlerStore.cs" />
-        <Compile Include="SimpleRattleStation.cs" />
+        <Compile Include="SimpleRattlerStation.cs" />
         <Compile Include="StationJsonConverter.cs" />
         <Compile Include="StationService.cs" />
         <Compile Include="StoreJsonConverter.cs" />

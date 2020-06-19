@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\sugar\RiderProjects\Rattler\Rattler\App.xaml
-11151548125
+4199243100
 
-41492813464
+81073461750
 10432302970
-MainWindow.xaml;
+EditStation.xaml;EditTransport.xaml;ErrorWindow.xaml;MainWindow.xaml;
 
-True
+False
 

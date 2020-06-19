@@ -27,7 +27,7 @@ namespace RattlerCore {
             writer.WritePropertyName("name");
             writer.WriteValue(value.name);
 
-            List<RattleStation> stations = value.getStations();
+            List<RattlerStation> stations = value.getStations();
             int count = stations.Count;
             long[] stationsId = new long[count];
             for (var i = 0; i < stations.Count; i++)
@@ -40,7 +40,6 @@ namespace RattlerCore {
                 serializer.Serialize(writer, item);
             }
             writer.WriteEndArray();
-
             writer.WriteEndObject();
         }
 
@@ -89,7 +88,7 @@ namespace RattlerCore {
 
         private void addStations(long[] stationsId, RattlerTransport transport) {
             foreach (long id in stationsId) {
-                RattleStation station = core.stationService.getById(id);
+                RattlerStation station = core.stationService.getById(id);
                 transport.addStation(station);
             }
         }

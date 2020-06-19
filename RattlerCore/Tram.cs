@@ -1,6 +1,9 @@
 ﻿namespace RattlerCore {
     public class Tram : MultiStationTransport {
+        
+        public override RattlerTransportType Type => getType();
 
+        
         public Tram(string name) {
             this.name = name;
             this.capacity = 56;

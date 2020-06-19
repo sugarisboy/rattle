@@ -51,6 +51,13 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="EditStation.xaml.cs">
+          <DependentUpon>EditStation.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="WindowType.cs" />
+        <Page Include="EditStation.xaml" />
+        <Page Include="EditTransport.xaml" />
+        <Page Include="ErrorWindow.xaml" />
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
@@ -58,6 +65,12 @@
         <Compile Include="App.xaml.cs">
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
+        </Compile>
+        <Compile Include="EditTransport.xaml.cs">
+          <DependentUpon>EditTransport.xaml</DependentUpon>
+        </Compile>
+        <Compile Include="ErrorWindow.xaml.cs">
+          <DependentUpon>ErrorWindow.xaml</DependentUpon>
         </Compile>
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>

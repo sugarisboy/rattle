@@ -5,6 +5,7 @@ namespace RattlerCore {
     public class ComplexRattlerStation : RattlerStation {
         private Dictionary<RattlerTransportType, List<LinkStation>> allLinks;
 
+        public RattlerTransportType Type => getType();
         public string name { get; set; }
 
         public ComplexRattlerStation(string name) {

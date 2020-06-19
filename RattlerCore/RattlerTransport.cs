@@ -4,19 +4,20 @@ using Newtonsoft.Json;
 
 namespace RattlerCore {
     public interface RattlerTransport : Numerable {
-        
+
+        public RattlerTransportType Type { get; }
         public string name { get; set; }
         public int capacity { get; set; }
         public double averageSpeed { get; set; }
 
+        List<RattlerStation> getStations();
+
+        void addStation(RattlerStation station);
+
+        void removeStation(RattlerStation station);
+
+        bool containsStation(RattlerStation station);
+
         RattlerTransportType getType();
-
-        List<RattleStation> getStations();
-
-        void addStation(RattleStation station);
-
-        void removeStation(RattleStation station);
-
-        bool containsStation(RattleStation station);
     }
 }

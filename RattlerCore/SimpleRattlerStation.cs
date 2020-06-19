@@ -12,6 +12,7 @@ namespace RattlerCore {
             this.links = new List<LinkStation>();
         }
 
+        public RattlerTransportType Type => getType();
         public string name { get; set; }
 
         public RattlerTransportType getType() {

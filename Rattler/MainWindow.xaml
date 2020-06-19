@@ -3,10 +3,77 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
         xmlns:local="clr-namespace:Rattler"
         mc:Ignorable="d"
-        Title="Rattler" Height="1280" Width="720">
+        Title="Rattler" Height="720" Width="1280">
     <Grid>
-       <!--<TextBox x:Name="TextBox" x:FieldModifier="public"/>-->
+        <Popup Name="myPopup">
+            <TextBlock Name="myPopupText"
+                       Background="LightBlue"
+                       Foreground="Blue">
+                Popup Text
+            </TextBlock>
+        </Popup>
+
+        <DockPanel HorizontalAlignment="Left" Height="20" LastChildFill="False" VerticalAlignment="Top" Width="1280">
+            <Menu Height="20" VerticalAlignment="Top" Width="1280">
+                <MenuItem Header="Файл">
+                    <MenuItem Header="Сохранить" Click="save"/>
+                    <MenuItem Header="Закрыть" Click="disable"/>
+                </MenuItem>
+
+                <MenuItem Header="_Транспорт">
+                    <MenuItem Click="addTransport" Header="_Добавить" />
+                </MenuItem>
+
+                <MenuItem Header="_Остановки">
+                    <MenuItem Click="addStation" Header="_Добавить" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        
+        <Button Content="Транспорт" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="75"
+                Click="show_transport" />
+        <Button Content="Остановки" HorizontalAlignment="Left" Margin="85,25,0,0" VerticalAlignment="Top" Width="75"
+                Click="show_station" />
+        <Button Content="Обновить" HorizontalAlignment="Right" Margin="0,25,25,0" VerticalAlignment="Top" Width="75"
+                Click="updateGrids" />
+        <Button Content="Удалить" x:Name="ButtonDelete" HorizontalAlignment="Right" Margin="0,25,25,0" VerticalAlignment="Top" Width="75"
+                Click="delete" />
+        <Button Content="Изменить" x:Name="ButtondEdit" HorizontalAlignment="Right" Margin="0,25,100,0" VerticalAlignment="Top" Width="75"
+                Click="edit" />
+        
+        <DataGrid x:Name="TransportGrid" HorizontalAlignment="Left" Height="670" Margin="0,50,0,0"
+                  VerticalAlignment="Top"
+                  Width="1280"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  SelectedCellsChanged="selectTransport"
+        >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Название" Binding="{Binding name}" />
+                <DataGridTextColumn Header="Вместимость" Binding="{Binding capacity}" />
+                <DataGridTextColumn Header="Ср. скорость" Binding="{Binding averageSpeed}" />
+                <DataGridTextColumn Header="Тип" Binding="{Binding Type}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <DataGrid x:Name="StationGrid" HorizontalAlignment="Left" Height="670" Margin="0,50,0,0"
+                  VerticalAlignment="Top"
+                  Width="1280"
+                  IsReadOnly="True"
+                  SelectionMode="Single"
+                  SelectedCellsChanged="selectStation"
+        >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}" />
+                <DataGridTextColumn Header="Название" Binding="{Binding name}" />
+                <DataGridTextColumn Header="Тип" Binding="{Binding Type}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--<TextBox x:Name="TextBox" x:FieldModifier="public"/>-->
     </Grid>
 </Window>

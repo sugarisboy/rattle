@@ -5,6 +5,8 @@ using Newtonsoft.Json.Linq;
 namespace RattlerCore {
     public class Train : MultiStationTransport {
 
+        public override RattlerTransportType Type => getType();
+
         public Train(string name) {
             this.name = name;
             this.capacity = 265;

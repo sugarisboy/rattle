@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace RattlerCore {
     public class ExpressTrain : RattlerTransport {
-        
-        private RattleStation A;
-        private RattleStation B;
+        private RattlerStation A;
+        private RattlerStation B;
 
+        public RattlerTransportType Type => getType();
 
         public string name { get; set; }
         public int capacity { get; set; }
@@ -19,7 +19,7 @@ namespace RattlerCore {
             this.averageSpeed = 47.5;
         }
 
-        public ExpressTrain(string name, RattleStation A, RattleStation B) {
+        public ExpressTrain(string name, RattlerStation A, RattlerStation B) {
             this.name = name;
             this.capacity = 56;
             this.averageSpeed = 47.5;
@@ -27,7 +27,7 @@ namespace RattlerCore {
             this.B = B;
         }
 
-        public ExpressTrain(RattleStation A, RattleStation B, double averageSpeed, int capacity) {
+        public ExpressTrain(RattlerStation A, RattlerStation B, double averageSpeed, int capacity) {
             this.capacity = capacity;
             this.averageSpeed = averageSpeed;
             this.A = A;
@@ -39,13 +39,8 @@ namespace RattlerCore {
             this.capacity = capacity;
         }
 
-        
-        public RattlerTransportType getType() {
-            return RattlerTransportType.EXPRESS_TRAIN;
-        }
-
-        public List<RattleStation> getStations() {
-            List<RattleStation> stations = new List<RattleStation>();
+        public List<RattlerStation> getStations() {
+            List<RattlerStation> stations = new List<RattlerStation>();
             if (A != null)
                 stations.Add(A);
             if (B != null)
@@ -53,7 +48,7 @@ namespace RattlerCore {
             return stations;
         }
 
-        public void addStation(RattleStation station) {
+        public void addStation(RattlerStation station) {
             if (A == null)
                 this.A = station;
             else if (B == null)
@@ -62,7 +57,7 @@ namespace RattlerCore {
                 throw new ApplicationException("Данный тип может иметь лишь две остановки");
         }
 
-        public void removeStation(RattleStation station) {
+        public void removeStation(RattlerStation station) {
             if (station.Equals(B)) {
                 this.B = null;
             } else if (station.Equals(A)) {
@@ -70,8 +65,12 @@ namespace RattlerCore {
             }
         }
 
-        public bool containsStation(RattleStation station) {
+        public bool containsStation(RattlerStation station) {
             return station != null && (station.Equals(A) || station.Equals(B));
+        }
+
+        public RattlerTransportType getType() {
+            return RattlerTransportType.EXPRESS_TRAIN;
         }
 
         public long id { get; set; }

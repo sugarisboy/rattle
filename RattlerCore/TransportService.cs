@@ -19,7 +19,7 @@ namespace RattlerCore {
         }
 
         public void removeTransport(RattlerTransport transport) {
-            core.store.transports.Add(transport);
+            core.store.transports.Remove(transport);
         }
     }
 }

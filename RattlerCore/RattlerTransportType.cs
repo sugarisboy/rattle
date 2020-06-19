@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 
 namespace RattlerCore {
-    public class RattlerTransportType {
+    public class RattlerTransportType : Numerable {
         public static RattlerTransportType TRAIN;
         public static RattlerTransportType METRO;
         public static RattlerTransportType TRAM;
@@ -10,19 +10,26 @@ namespace RattlerCore {
 
         private static RattlerTransportType[] values;
 
-        public string name;
+        public string name { get; }
+        public long id { get; set; }
 
-        private RattlerTransportType(string name) {
+
+        private RattlerTransportType(long id, string name) {
             this.name = name;
+            this.id = id;
+        }
+
+        public override string ToString() {
+            return name;
         }
 
         public static void init() {
             values = new[] {
-                TRAIN = new RattlerTransportType("Train"),
-                METRO = new RattlerTransportType("Metro"),
-                TRAM = new RattlerTransportType("Tram"),
-                EXPRESS_TRAIN = new RattlerTransportType("ExpressTrain"),
-                COMPLEX = new RattlerTransportType("Complex")
+                TRAIN = new RattlerTransportType(0, "Train"),
+                METRO = new RattlerTransportType(1, "Metro"),
+                TRAM = new RattlerTransportType(2, "Tram"),
+                EXPRESS_TRAIN = new RattlerTransportType(3, "ExpressTrain"),
+                COMPLEX = new RattlerTransportType(4, "Complex")
             };
         }
 

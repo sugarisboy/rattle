@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
 namespace RattlerCore {
-    public interface RattleStation : Numerable {
-        
+    public interface RattlerStation : Numerable {
+        public RattlerTransportType Type { get; }
         public string name { get; set; }
 
         RattlerTransportType getType();
@@ -13,8 +13,8 @@ namespace RattlerCore {
 
         void removeLink(LinkStation linkStation);
 
-        bool hasLinkAny(RattleStation first, RattleStation second);
-        
-        bool hasLink(RattlerTransportType type, RattleStation first, RattleStation second);
+        bool hasLinkAny(RattlerStation first, RattlerStation second);
+
+        bool hasLink(RattlerTransportType type, RattlerStation first, RattlerStation second);
     }
 }

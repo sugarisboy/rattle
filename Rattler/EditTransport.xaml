@@ -5,8 +5,27 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:Rattler"
         mc:Ignorable="d"
-        Title="EditTransport" Height="450" Width="800">
+        Title="Редактирование транспорта" Height="450" Width="400">
     <Grid>
-        
+        <StackPanel>
+            <TextBlock FontSize="18" Margin="40, 20, 40, 0">Имя:</TextBlock>
+            <TextBox x:Name="BoxName" TextAlignment="Left" Background="Beige" Width="320" Height="25" FontSize="18" />
+
+            <TextBlock FontSize="18" Margin="40, 20, 40, 0">Вместимость:</TextBlock>
+            <TextBox x:Name="BoxCapacity" TextAlignment="Left" Background="Beige" Width="320" Height="25" FontSize="18" />
+
+            <TextBlock FontSize="18" Margin="40, 20, 40, 0">Средняя скорость:</TextBlock>
+            <TextBox x:Name="BoxSpeed" TextAlignment="Left" Background="Beige" Width="320" Height="25" FontSize="18" />
+            
+            <TextBlock FontSize="18" Margin="40, 20, 40, 0">Тип:</TextBlock>
+            <StackPanel Margin="40, 10, 40, 0">
+                <CheckBox x:Name="BoxMetro" Checked="setMetro" Height="25" FontSize="18">Метро</CheckBox>
+                <CheckBox x:Name="BoxTram" Checked="setTram" Height="25" FontSize="18">Трамвай</CheckBox>
+                <CheckBox x:Name="BoxTrain" Checked="setTrain" Height="25" FontSize="18">Поезд</CheckBox>
+                <CheckBox x:Name="BoxExpressTrain" Checked="setExpressTrain" Height="25" FontSize="18">Экспресс поезд</CheckBox>
+            </StackPanel>
+
+            <Button Click="done" Width="320" Height="25" Margin="0,25,0,25">Готово</Button>
+        </StackPanel>
     </Grid>
 </Window>

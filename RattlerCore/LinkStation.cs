@@ -3,13 +3,13 @@
 namespace RattlerCore {
     public class LinkStation {
 
-        private RattleStation A;
-        private RattleStation B;
+        private RattlerStation A;
+        private RattlerStation B;
         private RattlerTransportType type;
 
         public double distance;
 
-        public LinkStation(RattleStation A, RattleStation B, double distance) {
+        public LinkStation(RattlerStation A, RattlerStation B, double distance) {
             if (A.Equals(B))
                 throw new ArgumentException("Станция A и станция B одинаковы!");
 
@@ -28,11 +28,11 @@ namespace RattlerCore {
             this.distance = distance;
         }
 
-        public RattleStation getA() {
+        public RattlerStation getA() {
             return A;
         }
 
-        public RattleStation getB() {
+        public RattlerStation getB() {
             return B;
         }
 
